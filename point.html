@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Point UML</title>
+<style>
+  body {
+    font-family: Consolas, "Courier New", monospace;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 40px 16px;
+    color: #222;
+  }
+  h1 { text-align: center; }
+  .legend { text-align: center; font-size: 0.9em; margin-bottom: 30px; }
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .uml {
+    border: 2px solid #222;
+    background: #fff;
+    width: 460px;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .uml > div {
+    padding: 8px 14px;
+    border-bottom: 2px solid #222;
+  }
+  .uml > div:last-child { border-bottom: none; }
+  .name {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2em;
+    background: #dde8f5;
+  }
+  .name small { display: block; font-weight: normal; font-size: 0.7em; }
+  .uml p { margin: 4px 0; font-size: 0.88em; overflow-wrap: anywhere; }
+  .note { font-size: 0.8em; background: #fffbe6; }
+</style>
+</head>
+<body>
+  <h1>Point &ndash; UML</h1>
+  <div class="legend">
+    <b>+</b> public &nbsp; <b>-</b> private (underscore)
+  </div>
+
+  <div class="grid">
+    <div class="uml">
+      <div class="name">Point<small>Point.py</small></div>
+      <div class="attributes">
+        <p>- _x : float</p>
+        <p>- _y : float</p>
+        <p>+ X : float {read-only property}</p>
+        <p>+ Y : float {read-only property}</p>
+      </div>
+      <div class="methods">
+        <p>+ __init__(x: float, y: float)</p>
+      </div>
+      <div class="note">
+        point1 = Point(9.44, -10)<br>
+        print(point1.X) &nbsp;// 9.44<br>
+        print(point1.Y) &nbsp;// -10<br>
+        X and Y have no setter, so point1.X = 5 raises AttributeError.
+      </div>
+    </div>
+  </div>
+</body>
+</html>
